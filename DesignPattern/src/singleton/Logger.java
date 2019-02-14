@@ -1,11 +1,27 @@
 package singleton;
 
-public class Logger {
+import java.io.Serializable;
+
+public class Logger implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3147261525218516872L;
+	private int i = 0;
 	
 	private Logger() {
 		
 	}
-	
+		
+	public int getI() {
+		return i;
+	}
+
+	public void setI(int i) {
+		this.i = i;
+	}
+
 	//Static method - getInstance is returning this object. So, this must be static
 	private static Logger logger;
 	
@@ -16,4 +32,11 @@ public class Logger {
 		}
 		return logger;
 	}
+	
+	
+	
+	protected Object readResolve() 
+    { 
+        return logger; 
+    } 
 }

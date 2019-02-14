@@ -39,7 +39,7 @@ class Square extends Rectangle{
 	  }
 
 	  public Square(int size) {
-	    width = height = size;
+	    breath = length = size;
 	  }
 	
 	@Override
@@ -62,5 +62,4 @@ public class LiskovSubstitutionPrincipleDemo {
 		
 
 	}
-
 }
